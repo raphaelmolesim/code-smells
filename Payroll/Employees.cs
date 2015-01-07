@@ -34,11 +34,11 @@ namespace Payroll
         //simulando banco de dados:
         private List<Employee> employees = new List<Employee>
                                                {
-                                                   new Employee { Id = 1, SubsidiaryId = 999, TerminationDate = new DateTime(2010, 10, 1), AccountNumber = 11, AccountType = 100, BankNumber = 7}, 
-                                                   new Employee { Id = 2, SubsidiaryId = 3, TerminationDate = new DateTime(2010, 10, 1) , AccountNumber = 12, AccountType = 200, BankNumber = 8}, 
-                                                   new Employee { Id = 3, SubsidiaryId = 999, AccountNumber = 13, AccountType = 300, BankNumber = 9},
-                                                   new Employee { Id = 4, SubsidiaryId = 999, AccountNumber = 14, AccountType = 200, BankNumber = 10},
-                                                   new Employee { Id = 5, SubsidiaryId = 999, AccountNumber = 15, AccountType = 100, BankNumber = 11}
+                                                   new Employee { Id = 1, SubsidiaryId = 999, TerminationDate = new DateTime(2010, 10, 1), AccountNumber = 11, AccountType = AccountType.CheckingsAccount, BankNumber = 7}, 
+                                                   new Employee { Id = 2, SubsidiaryId = 3, TerminationDate = new DateTime(2010, 10, 1) , AccountNumber = 12, AccountType = AccountType.SavingsAccount, BankNumber = 8}, 
+                                                   new Employee { Id = 3, SubsidiaryId = 999, AccountNumber = 13, AccountType = AccountType.CheckingsAndSavingsAccount, BankNumber = 9},
+                                                   new Employee { Id = 4, SubsidiaryId = 999, AccountNumber = 14, AccountType = AccountType.SavingsAccount, BankNumber = 10},
+                                                   new Employee { Id = 5, SubsidiaryId = 999, AccountNumber = 15, AccountType = AccountType.CheckingsAccount, BankNumber = 11}
                                                };
     }
 }

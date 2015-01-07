@@ -11,20 +11,19 @@ namespace Payroll
             this.bankNumber = bankNumber;
         }
 
-        public Account GetAccountFor(int accountType, int accountNumber)
+        public Account GetAccountFor(AccountType accountType, int accountNumber)
         {
             switch (accountType)
             {
-                case 100:
+                case AccountType.CheckingsAccount:
                     return new CheckingsAccount(bankNumber, accountNumber);
-                case 200:
+                case AccountType.SavingsAccount:
                     return new SavingsAccount(bankNumber, accountNumber);
-                case 300:
+                case AccountType.CheckingsAndSavingsAccount:
                     return new CheckingsAndSavingsAccount(bankNumber, accountNumber);
             }
             //throws if account type is invalid
             throw new ArgumentException("account type not found", "accountType");
         }
-
     }
 }

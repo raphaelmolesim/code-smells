@@ -12,7 +12,7 @@ namespace Payroll
 
         public int BankNumber { get; set; }
 
-        public int AccountType { get; set; }
+        public AccountType AccountType { get; set; }
 
         public int AccountNumber { get; set; }
     }

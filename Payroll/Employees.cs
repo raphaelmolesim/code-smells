@@ -12,17 +12,11 @@ namespace Payroll
         }
 
         public Employee GetBy(int id, bool isActive)
-        {
-            //user is active if termination date is null and subsidiary id is 999
-            if (isActive)
-            {
-                return (from e in employees
-                        where e.Id == id && e.TerminationDate == null && e.SubsidiaryId == 999
-                        select e).SingleOrDefault();
-            }
+        {            
             return (from e in employees
-                    where e.Id == id && e.TerminationDate != null || e.SubsidiaryId != 999
+                    where e.Id == id && e.IsActive == isActive
                     select e).SingleOrDefault();
+            
         }
 
         public Employee GetBy(int bankNumber, int accountNumber)

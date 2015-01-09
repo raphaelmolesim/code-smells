@@ -15,5 +15,13 @@ namespace Payroll
         public AccountType AccountType { get; set; }
 
         public int AccountNumber { get; set; }
+
+        public bool IsActive
+        {
+            get
+            {
+                return (this.TerminationDate == null && this.SubsidiaryId == 999);
+            }
+        }
     }
 }
